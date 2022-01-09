@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #create APPs
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -104,13 +106,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
 USE_TZ = True
+
+AUTH_USER_MODEL = 'account.CustomUser'
 
 
 # Static files (CSS, JavaScript, Images)
