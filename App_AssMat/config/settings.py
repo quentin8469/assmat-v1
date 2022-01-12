@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #create APPs
     'account.apps.AccountConfig',
     'dashboard.apps.DashboardConfig',
+    'famille.apps.FamilleConfig'
 ]
 
 MIDDLEWARE = [
