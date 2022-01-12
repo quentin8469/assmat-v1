@@ -14,7 +14,7 @@ class Employeur(models.Model):
     tel_fix = models.CharField(max_length=10, blank=True, null=True)
     tel_mob = models.CharField(max_length=10, blank=True, null=True)
     tel_doc = models.CharField(max_length=10, blank=True, null=True)
-    date_anniv = models.CharField(max_length=10, blank=True, null=True)
+    date_anniv = models.DateTimeField(blank=True, null=True)
     num_urssaf = models.CharField(max_length=13, blank=True, null=True)
     ass_mat = models.ForeignKey(to=CustomUser, on_delete=models.CASCADE)
     
@@ -26,21 +26,7 @@ class Employeur(models.Model):
         return f"{self.nom} - {self.prenom}"
     
 
-class Enfant(models.Model):
-    photo = models.ImageField(upload_to="photo_profil/", blank=True, null=True)
-    nom = models.CharField(max_length=40, blank=True, null=True)
-    prenom = models.CharField(max_length=20, blank=True, null=True)
-    date_anniv = models.CharField(max_length=10, blank=True, null=True)
-    age = models.IntegerField(blank=True, null=True)
-    commentaire = models.TextField(blank=True, null=True)
-    #contrat = models.ForeignKey(to=Contrat, on_delete=models.CASCADE)
-    
-    class Meta:
-        verbose_name = "Enfant"
-        verbose_name_plural = "Enfants"
 
-    def __str__(self):
-        return f"{self.nom} - {self.prenom}"
 
 
 class Famille(models.Model):
