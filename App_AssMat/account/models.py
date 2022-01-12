@@ -16,11 +16,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     ville = models.CharField(max_length=40, blank=True, null=True)
     tel_fix = models.CharField(max_length=10, blank=True, null=True)
     tel_mob = models.CharField(max_length=10, blank=True, null=True)
-    date_anniv = models.CharField(max_length=10, blank=True, null=True)
+    date_anniv = models.DateTimeField(blank=True, null=True)
     num_secu = models.CharField(max_length=13, blank=True, null=True)
     max_enfants = models.IntegerField(blank=True, null=True)
     num_agrement = models.CharField(max_length=6, blank=True, null=True)
-    date_agrement = models.CharField(max_length=10, blank=True, null=True)
+    date_agrement = models.DateTimeField(blank=True, null=True)
     ass_civil = models.CharField(max_length=20, blank=True, null=True)
     ass_auto = models.CharField(max_length=20, blank=True, null=True)
     
