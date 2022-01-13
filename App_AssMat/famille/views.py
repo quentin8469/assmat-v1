@@ -5,5 +5,6 @@ from famille.models import Employeur
 
 class EmployeurView(ListView):
     model = Employeur
-    context_object_name = 'employeurs'
-    tempalte_name = 'famille/liste_famille.html'
+    #queryset = Employeur.objects.all()
+    context_object_name = "employeurs"
+    

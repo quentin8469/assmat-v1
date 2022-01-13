@@ -6,4 +6,3 @@ def index(request):
     """ """
     return render(request, "dashboard/base_dashboard.html")
 
-

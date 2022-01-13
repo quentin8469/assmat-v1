@@ -1,0 +1,50 @@
+
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+
+<section class="section is-medium">
+  <h1 class="title">Recap famille</h1>
+        <h2 class="subtitle">
+          recapitule toutes les <strong>familles</strong> dont tu garde les sales gosses.
+        </h2>
+        <h2> liste famille, utile a voir comment l'utiliser( penser a rapatrier enfant ici une fois crée avec le crontrat)</h2>
+        <h2> sera afficher sur le dashboard</h2>
+  <table class="table">
+      
+      <thead>
+          <tr>
+              <th><abbr title="Position">ID</abbr></th>
+              <th>Famille</th>
+              <th><abbr title="tel_fix">tel_fix</abbr></th>
+              <th><abbr title="tel_mobile">tel_mobile</abbr></th>
+              <th><abbr title="tel_doc">tel_doc</abbr></th>
+              <th><abbr title="adresse_postale">adresse_postale</abbr></th>
+              <th><abbr title="code_postal">code_postal</abbr></th>
+              <th><abbr title="num_urssaf">num_urssaf</abbr></th>
+              <th><abbr title="date_anniv">date_anniv</abbr></th>
+              <th><abbr title="ass_mat">ass_mat</abbr></th>
+              <th>Contacts d'urgences</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for employeur in employeurs %}
+        <tr>
+          <th>{{ employeur.id }}</th>
+          <td><a href="" title="Leicester City F.C.">{{ employeur.nom }}</a>
+          </td>
+          <td>{{ employeur.tel_fix }}</td>
+          <td>{{ employeur.tel_mob }}</td>
+          <td>{{ employeur.tel_doc }}</td>
+          <td>{{ employeur.adresse_postale }}</td>
+          <td>{{ employeur.code_postal }}</td>
+          <td>{{ employeur.num_urssaf}}</td>
+          <td>{{ employeur.date_anniv }}</td>
+          <td>{{ employeur.ass_mat }}</td>
+          <td>Contacts d'urgences </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</section>

@@ -9,5 +9,5 @@ from famille.views import EmployeurView
 app_name = 'famille'
 
 urlpatterns = [
-    path('liste_employeurs/', EmployeurView.as_view(), name='liste_employeurs')
+    path('', EmployeurView.as_view(), name='liste_employeurs')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
