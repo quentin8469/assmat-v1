@@ -11,6 +11,6 @@ app_name = 'famille'
 
 urlpatterns = [
     path('', EmployeurView.as_view(), name='liste_employeurs'),
-    path('nouveau_employeur/', EmployeurCreate.as_view(), name='creation-employeur'),
+    path('creation_employeur/', EmployeurCreate.as_view(), name='creation_employeur'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

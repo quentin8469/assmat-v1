@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 {% load static %}
 <html lang="en">
 <head>
@@ -9,10 +9,58 @@
     <title>Super_AssMat</title>
     
 </head>
-<form action="/famille/" method="POST">
+<form action="" method="POST" class="box">
     {% csrf_token %}
-        {{form.nom}}
-        {{form.prenom}}
-        {{form.as_p}}
-    <input class="validation" type="submit" value="Validez votre employeur">            
+        <div class="field">
+            <label class="label">Nom:</label>
+            <div class="control">
+                {{form.nom}}
+            </div>
+            <label class="label">Prénom:</label>
+            <div class="control">
+                {{form.prenom}}
+            </div>
+            <label class="label">Email:</label>
+            <div class="control">
+                {{form.email}}
+            </div>
+            <label class="label">Photo:</label>
+            <div class="control">
+                {{form.photo}}
+            </div>
+            <label class="label">Adresse:</label>
+            <div class="control">
+                {{form.adresse_postale}}
+            </div>
+            <label class="label">Code postal:</label>
+            <div class="control">
+                {{form.code_postal}}
+            </div>
+            <label class="label">Ville:</label>
+            <div class="control">
+                {{form.ville}}
+            </div>
+            <label class="label">Télephone fix:</label>
+            <div class="control">
+                {{form.tel_fix}}
+            </div>
+            <label class="label">Télephone mobile:</label>
+            <div class="control">
+                {{form.tel_mob}}
+            </div>
+            <label class="label">Télephone docteur:</label>
+            <div class="control">
+                {{form.tel_doc}}
+            </div>
+            <label class="label">Date d'anniversaire:</label>
+            <div class="control">
+                {{form.date_anniv}}
+            </div>
+            <label class="label">Numero Urssaf:</label>
+            <div class="control">
+                {{form.num_urssaf}}
+            </div>
+        </div>
+    <input class="validation" type="submit" value="Validez votre employeur"> 
+    <a class="" href="" >Retour page précédente</a>#}           
 </form>

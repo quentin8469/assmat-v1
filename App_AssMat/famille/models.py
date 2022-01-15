@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 from account.models import CustomUser
 
 # Create your models here.
@@ -25,8 +25,7 @@ class Employeur(models.Model):
     def __str__(self):
         return f"{self.nom} - {self.prenom}"
     
-
-
+    
 
 
 class Famille(models.Model):
