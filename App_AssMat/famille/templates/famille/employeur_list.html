@@ -11,7 +11,9 @@
         </h2>
         <h2> liste famille, utile a voir comment l'utiliser( penser a rapatrier enfant ici une fois crée avec le crontrat)</h2>
         <h2> sera afficher sur le dashboard</h2>
-        <a class="" href="">Creation d'une nouvelle Famille</a>
+        <a class="" href="{% url 'famille:liste_employeurs' %}" >Liste employeurs</a> 
+        <a class="" href="{% url 'famille:creation_employeur' %}">Creation d'une nouvelle Famille</a>
+        <a class="" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
   <table class="table">
       
       <thead>
@@ -27,6 +29,7 @@
               <th><abbr title="date_anniv">date_anniv</abbr></th>
               <th><abbr title="ass_mat">ass_mat</abbr></th>
               <th>Contacts d'urgences</th>
+              <th>Détails employeur</th>
           </tr>
       </thead>
       <tbody>
@@ -44,6 +47,7 @@
           <td>{{ employeur.date_anniv }}</td>
           <td>{{ employeur.ass_mat }}</td>
           <td>Contacts d'urgences </td>
+          <td><a class="" href="{% url 'famille:details_employeur' employeur.id %}" >Détails employeur</a> </td>
         </tr>
         {% endfor %}
       </tbody>

@@ -1,0 +1,60 @@
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+
+
+<section class="section is-medium">
+    <a class="" href="{% url 'famille:liste_employeurs' %}" >Retour Liste employeur</a> 
+    <a class="" href="{% url 'famille:effacer_employeur' employeur.id %}" >Effacer employeur</a> 
+    <div class="field">
+        <label class="label">Nom:</label>
+        <div class="control">
+            {{employeur.nom}}
+        </div>
+        <label class="label">Prénom:</label>
+        <div class="control">
+            {{employeur.prenom}}
+        </div>
+        <label class="label">Email:</label>
+        <div class="control">
+            {{employeur.email}}
+        </div>
+        <label class="label">Photo:</label>
+        <div class="control">
+            {{employeur.photo}}
+        </div>
+        <label class="label">Adresse:</label>
+        <div class="control">
+            {{employeur.adresse_postale}}
+        </div>
+        <label class="label">Code postal:</label>
+        <div class="control">
+            {{employeur.code_postal}}
+        </div>
+        <label class="label">Ville:</label>
+        <div class="control">
+            {{employeur.ville}}
+        </div>
+        <label class="label">Télephone fix:</label>
+        <div class="control">
+            {{employeur.tel_fix}}
+        </div>
+        <label class="label">Télephone mobile:</label>
+        <div class="control">
+            {{employeur.tel_mob}}
+        </div>
+        <label class="label">Télephone docteur:</label>
+        <div class="control">
+            {{employeur.tel_doc}}
+        </div>
+        <label class="label">Date d'anniversaire:</label>
+        <div class="control">
+            {{employeur.date_anniv}}
+        </div>
+        <label class="label">Numero Urssaf:</label>
+        <div class="control">
+            {{employeur.num_urssaf}}
+        </div>
+    </div>
+</section>

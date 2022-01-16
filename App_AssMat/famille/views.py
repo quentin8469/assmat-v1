@@ -1,5 +1,5 @@
 
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
 
 from famille.models import Employeur
@@ -23,4 +23,24 @@ class EmployeurCreate(CreateView):
            form.instance.ass_mat = self.request.user
            return super().form_valid(form)
        
-       
+
+class EmployeurDetail(DetailView):
+    model = Employeur
+    template_name = "famille/employeur_details.html"
+    context_object_name = "employeur"
+    
+
+
+class EmployeurUpdateView(UpdateView):
+    model = Employeur
+    form_class = NewEmployeurForm
+    template_name = "famille/employeur_create.html"
+    success_url = '/liste_employeurs/'
+    pass
+
+class EmployeurDeleteView(DeleteView):
+    model = Employeur
+    context_object_name = "employeur"
+    template_name ='famille/employeur_delete.html'
+    success_url = '/liste_employeurs/'
+    
