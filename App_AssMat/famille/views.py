@@ -10,6 +10,7 @@ class EmployeurView(ListView):
     model = Employeur
     #queryset = Employeur.objects.all()
     context_object_name = "employeurs"
+    template_name = "famille/employeur_list.html"
 
 
 class EmployeurCreate(CreateView):

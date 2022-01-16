@@ -9,6 +9,6 @@ app_name = 'dashboard'
 
 urlpatterns = [
     path('', index, name='dashboard'),
-    path('liste_employeurs/', include('famille.urls')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

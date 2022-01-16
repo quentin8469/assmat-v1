@@ -25,7 +25,8 @@ class Employeur(models.Model):
     def __str__(self):
         return f"{self.nom} - {self.prenom}"
     
-    
+    # def get_absolute_url(self):
+    #     return reverse('famille:famille')
 
 
 class Famille(models.Model):
