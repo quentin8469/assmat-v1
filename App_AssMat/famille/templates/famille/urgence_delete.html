@@ -1,0 +1,17 @@
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+
+
+<form action="" method="POST" class="box">
+    {% csrf_token %}
+        <div class="field">
+            <label class="label">Nom:</label>
+            <div class="control">
+               <p>Voulez-vous supprimer ce contact d'urgence: {{ contacts_urgences.nom }} ? </p> 
+            </div>
+        </div>
+    <input class="validation" type="submit" value="Validez votre suppression employeur">     
+    <a class="" href="{% url 'famille:liste_employeurs' %}" >Retour Liste employeur</a>      
+</form>

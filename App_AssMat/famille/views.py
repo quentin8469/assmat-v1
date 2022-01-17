@@ -52,34 +52,38 @@ class EmployeurDeleteView(DeleteView):
 class ContactUrgenceView(ListView):
     model = ContactUrgence
     context_object_name = "contacts_urgences"
-    template_name ='famille/employeur_delete.html'
+    template_name ='famille/urgence_list.html'
     success_url = '/liste_employeurs/'
-    pass
+    
 
 class ContactUrgenceDetail(DetailView):
     model = ContactUrgence
     context_object_name = "contacts_urgences"
-    template_name ='famille/employeur_delete.html'
+    template_name ='famille/urgence_details.html'
     success_url = '/liste_employeurs/'
-    pass
+    
 
 class ContactUrgenceCreate(CreateView):
     model = ContactUrgence
     form_class = NewContactUrgenceForm
-    template_name ='famille/employeur_delete.html'
+    template_name ='famille/urgence_create.html'
     success_url = '/liste_employeurs/'
-    pass 
+    
+    def form_valid(self, form):
+
+        form.instance.ContactUrgence = self.kwargs['employeur']
+        return super().form_valid(form)
 
 class ContactUrgenceUpdateView(UpdateView):
     model = ContactUrgence
     context_object_name = "contacts_urgences"
-    template_name ='famille/employeur_delete.html'
+    template_name ='famille/urgence_create.html'
     success_url = '/liste_employeurs/'
-    pass 
+    
 
 class ContactUrgenceDeleteView(DeleteView):
     model = ContactUrgence
     context_object_name = "contacts_urgences"
-    template_name ='famille/employeur_delete.html'
+    template_name ='famille/urgence_delete.html'
     success_url = '/liste_employeurs/'
-    pass
+    
