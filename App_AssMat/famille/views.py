@@ -69,10 +69,6 @@ class ContactUrgenceCreate(CreateView):
     template_name ='famille/urgence_create.html'
     success_url = '/liste_employeurs/'
     
-    def form_valid(self, form):
-
-        form.instance.ContactUrgence = self.kwargs['employeur']
-        return super().form_valid(form)
 
 class ContactUrgenceUpdateView(UpdateView):
     model = ContactUrgence

@@ -11,10 +11,10 @@
         </h2>
         <h2> liste famille, utile a voir comment l'utiliser( penser a rapatrier enfant ici une fois crée avec le crontrat)</h2>
         <h2> sera afficher sur le dashboard</h2>
-        <a class="" href="{% url 'famille:liste_employeurs' %}" >Liste employeurs</a> 
-        <a class="" href="{% url 'famille:creation_employeur' %}">Creation d'une nouvelle Famille</a>
-        <a class="" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
-        <td><a class="" href="{% url 'famille:creation_contact_urgence' employeur.id %}" >Creation Contacts d'urgence</a> </td>
+        <a class="button is-dark" href="{% url 'famille:liste_employeurs' %}" >Liste employeurs</a> 
+        <a class="button is-dark" href="{% url 'famille:creation_employeur' %}">Creation d'une nouvelle Famille</a>
+        <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
+        <td><a class="button is-dark" href="{% url 'famille:creation_contact_urgence' employeur.id %}" >Creation Contacts d'urgence</a> </td>
   <table class="table">
       
       <thead>
@@ -39,7 +39,7 @@
           <td>{{ contact_urgence.tel_fix }}</td>
           <td>{{ contact_urgence.tel_mob }}</td>
           <td>{{ contact_urgence.employeur }}</td>
-          <td><a class="" href="{% url 'famille:details_employeur' employeur.id %}" >Détails contacts urgences</a> </td>
+          <td><a class="button is-dark" href="{% url 'famille:details_employeur' employeur.id %}" >Détails contacts urgences</a> </td>
         </tr>
         {% endfor %}
       </tbody>

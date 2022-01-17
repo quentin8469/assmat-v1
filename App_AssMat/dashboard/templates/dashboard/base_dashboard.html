@@ -26,32 +26,22 @@
         
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item">
-                    Truc01
+                    <a class="navbar-item" href="{% url 'famille:liste_employeurs' %}">
+                        Liste employeurs
                     </a>
             
-                    <a class="navbar-item">
-                    Documentation
+                    <a class="navbar-item" href="{% url 'dashboard:dashboard' %}">
+                        tableau de board
                     </a>
             
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            More
-                        </a>
+                        <a class="navbar-link">Autres options</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                            About
-                            </a>
-                            <a class="navbar-item">
-                            Jobs
-                            </a>
-                            <a class="navbar-item">
-                            Contact
-                            </a>
+                            <a class="navbar-item">Contrats</a>
+                            <a class="navbar-item">Profile</a>
+                            <a class="navbar-item">Contact</a>
                             <hr class="navbar-divider">
-                            <a class="navbar-item">
-                            Report an issue
-                            </a>
+                            <a class="navbar-item">Report an issue</a>
                         </div>
                     </div>
                 </div>
@@ -72,8 +62,8 @@
         </nav>
     </header>
 
-   
-    </div>
+
+
     <div class="columns is-mobile is-multiline is-centered"> 
         <div class="column is-narrow">
           <p class="bd-notification is-primary">
@@ -81,11 +71,9 @@
           </p>
         </div>
     </div>
-    {% include "dashboard/recap_dashboard.html" %}
-    {% block content %}
     
     
-    {% endblock %}
+    {% include "famille/employeur_list.html" %}
 
     <footer class="footer">
         <div class="content has-text-centered">
