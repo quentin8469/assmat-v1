@@ -1,0 +1,51 @@
+
+{% load static %}
+
+
+<section class="section is-medium">
+  <h1 class="title">Recap Contrats</h1>
+        <h2 class="subtitle">
+          recapitule tout les <strong>Contrats</strong> dont tu garde les sales gosses.
+        </h2>
+        
+        <a class="button is-dark" href="{% url 'contrat:creation_contrats' %}">Creation d'un nouveau contrat</a>
+        
+  <table class="table is-bordered">
+      
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>nom</th>
+              <th>date de création</th>
+              <th>date de debut</th>
+              <th>date de fin</th>
+              <th>heure hebdomadaire</th>
+              <th>jour hebdomadaire</th>
+              <th>nombre de semaine</th>
+              <th>date de paiement</th>
+              <th>type de contrat</th>
+              <th>employeur</th>
+              <th>Modifier contrat</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for contrat in contrats %}
+        <tr>
+          <th>{{ contrat.id }}</th>
+          <td><a href="" >{{ contrat.nom }}</a>
+          </td>
+          <td>{{ contrat.date_creation }}</td>
+          <td>{{ contrat.date_debut }}</td>
+          <td>{{ contrat.date_fin }}</td>
+          <td>{{ contrat.heure_hebdo }} h</td>
+          <td>{{ contrat.jour_hebdo }}</td>
+          <td>{{ contrat.nb_semaine}}</td>
+          <td>{{ contrat.date_paiement }}</td>
+          <td>{{ contrat.type_contrat}}</td>
+          <td>{{ contrat.employeur}}</td>
+          <td><a class="button is-dark" href="" >Modifier contrat</a> </td> 
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</section>

@@ -20,7 +20,7 @@ class EmployeurCreate(CreateView):
        model = Employeur
        form_class = NewEmployeurForm
        template_name = "famille/employeur_create.html"
-       success_url = '/liste_employeurs/'
+       success_url = '/dashboard/'
        
        def form_valid(self, form):
            form.instance.ass_mat = self.request.user

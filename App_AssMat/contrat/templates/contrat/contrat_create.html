@@ -1,0 +1,52 @@
+
+{% extends "dashboard/base_dashboard_02.html" %}
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+
+{% block content %}
+<form action="" method="POST" class="box">
+    {% csrf_token %}
+        <div class="field">
+            <label class="label">Nom:</label>
+            <div class="control">
+                {{form.nom}}
+            </div>
+            <label class="label">Date de debut du contrat:</label>
+            <div class="control">
+                {{form.date_debut}}
+            </div>
+            <label class="label">Date de fin du contrat:</label>
+            <div class="control">
+                {{form.date_fin}}
+            </div>
+            <label class="label">Nombre d'heures hebdomadaire:</label>
+            <div class="control">
+                {{form.heure_hebdo}}
+            </div>
+            <label class="label">Nombre de jours hebdomadaire:</label>
+            <div class="control">
+                {{form.jour_hebdo}}
+            </div>
+            <label class="label">Nombre de semaines:</label>
+            <div class="control">
+                {{form.nb_semaine}}
+            </div>
+            <label class="label">Date de paiement:</label>
+            <div class="control">
+                {{form.date_paiement}}
+            </div>
+            <label class="label">Type de contrat:</label>
+            <div class="control">
+                {{form.type_contrat}}
+            </div>
+            <label class="label">Nom employeur:</label>
+            <div class="control">
+                {{form.employeur}}
+            </div>
+        </div>
+    <input class="button is-dark" type="submit" value="Validez votre employeur"> 
+    <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>          
+</form>
+{% endblock %}
