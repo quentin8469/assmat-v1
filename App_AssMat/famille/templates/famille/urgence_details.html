@@ -1,9 +1,10 @@
+{% extends "dashboard/base_dashboard_02.html" %}
 {% load static %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
 
-
+{% block content %}
 <section class="section is-medium">
     <a class="button is-dark" href="{% url 'famille:liste_employeurs' %}" >Retour Liste employeur</a> 
     <a class="button is-dark" href="{% url 'famille:effacer_employeur' employeur.id %}" >Effacer employeur</a> 
@@ -36,3 +37,4 @@
         </div>
     </div>
 </section>
+{% endblock %}

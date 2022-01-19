@@ -1,8 +1,10 @@
+{% extends "dashboard/base_dashboard_02.html" %}
 {% load static %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
 
+{% block content %}
 
 <form action="" method="POST" class="box">
     {% csrf_token %}
@@ -15,3 +17,4 @@
     <input class="button is-dark" type="submit" value="Validez votre suppression employeur">     
     <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>      
 </form>
+{% endblock %}
