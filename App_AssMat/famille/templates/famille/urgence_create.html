@@ -9,34 +9,39 @@
     <title>Super_AssMat</title>
     
 </head>
-<form action="" method="POST" class="box">
-    {% csrf_token %}
-        <div class="field">
-            <label class="label">Nom:</label>
-            <div class="control">
-                {{form.nom}}
-            </div>
-            <label class="label">Prénom:</label>
-            <div class="control">
-                {{form.prenom}}
-            </div>
-            <label class="label">Filiation:</label>
-            <div class="control">
-                {{form.filiation}}
-            </div>
-            <label class="label">Télephone fix:</label>
-            <div class="control">
-                {{form.tel_fix}}
-            </div>
-            <label class="label">Télephone mobile:</label>
-            <div class="control">
-                {{form.tel_mob}}
-            </div>
-            <label class="label">Employeur:</label>
-            <div class="control">
-                {{form.employeur}}
-            </div>
-        </div>
-    <input class="validation" type="submit" value="Validez votre employeur"> 
-    <a class="button is-dark" href="{% url 'famille:liste_employeurs' %}" >Retour page liste employeur</a>          
-</form>
+<div class="columns is-mobile is-multiline is-centered"> 
+    <div class="column is-narrow">
+        <p class="bd-notification is-primary">
+            <h5 class="title is-5">Bonjour {{user.username}} , vous souhaitez créer un nouveau contact d'urgences pour "{{employeur.nom}}"</h5>
+        </p>
+    
+        <form action="" method="POST" class="box">
+            {% csrf_token %}
+                <div class="field">
+                    <label class="label">Nom:</label>
+                    <div class="control">
+                        {{form.nom}}
+                    </div>
+                    <label class="label">Prénom:</label>
+                    <div class="control">
+                        {{form.prenom}}
+                    </div>
+                    <label class="label">Filiation:</label>
+                    <div class="control">
+                        {{form.filiation}}
+                    </div>
+                    <label class="label">Télephone fix:</label>
+                    <div class="control">
+                        {{form.tel_fix}}
+                    </div>
+                    <label class="label">Télephone mobile:</label>
+                    <div class="control">
+                        {{form.tel_mob}}
+                    </div>
+                    
+                </div>
+            <input class="button is-dark" type="submit" value="Validez votre employeur"> 
+            <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>          
+        </form>
+    </div>
+</div>

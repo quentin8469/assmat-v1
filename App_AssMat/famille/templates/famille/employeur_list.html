@@ -1,9 +1,7 @@
 
 {% load static %}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
-{% block content %}
+
 <section class="section is-medium">
   <h1 class="title">Recap famille</h1>
         <h2 class="subtitle">
@@ -11,32 +9,30 @@
         </h2>
         <h2> liste famille, utile a voir comment l'utiliser( penser a rapatrier enfant ici une fois crée avec le crontrat)</h2>
         <h2> sera afficher sur le dashboard</h2>
-        <a class="button is-dark" href="{% url 'famille:liste_employeurs' %}" >Liste employeurs</a> 
         <a class="button is-dark" href="{% url 'famille:creation_employeur' %}">Creation d'une nouvelle Famille</a>
-        <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
+        
   <table class="table is-bordered">
       
       <thead>
           <tr>
-              <th><abbr title="Position">ID</abbr></th>
+              <th>ID</th>
               <th>Famille</th>
-              <th><abbr title="tel_fix">Tel_fix</abbr></th>
-              <th><abbr title="tel_mobile">Tel_mobile</abbr></th>
-              <th><abbr title="tel_doc">Tel_doc</abbr></th>
-              <th><abbr title="adresse_postale">Adresse_postale</abbr></th>
-              <th><abbr title="code_postal">Code_postal</abbr></th>
-              <th><abbr title="num_urssaf">Num_urssaf</abbr></th>
-              <th><abbr title="date_anniv">Date_anniv</abbr></th>
-              <th><abbr title="ass_mat">Ass_mat</abbr></th>
-              <th>Contacts d'urgences</th>
-              <th>Détails employeur</th>
+              <th>Tel_fix</th>
+              <th>Tel_mobile</th>
+              <th>Tel_doc</th>
+              <th>Adresse_postale</th>
+              <th>Code_postal</th>
+              <th>Num_urssaf</th>
+              <th>Date_anniv</th>
+              <th>Ass_mat</th>
+              <th>Liste contacts d'urgence</th>
           </tr>
       </thead>
       <tbody>
         {% for employeur in employeurs %}
         <tr>
           <th>{{ employeur.id }}</th>
-          <td><a href="{% url 'famille:details_employeur' employeur.id %}" >{{ employeur.nom }}</a>
+          <td><a href="{% url 'famille:details_employeur' pk=employeur.id %}" >{{ employeur.nom }}</a>
           </td>
           <td>{{ employeur.tel_fix }}</td>
           <td>{{ employeur.tel_mob }}</td>
@@ -46,11 +42,9 @@
           <td>{{ employeur.num_urssaf}}</td>
           <td>{{ employeur.date_anniv }}</td>
           <td>{{ employeur.ass_mat }}</td>
-          <td><a class="button is-dark" href="{% url 'famille:creation_contact_urgence' employeur.id %}" >Contacts d'urgence</a> </td>
-          <td><a class="button is-dark" href="{% url 'famille:details_employeur' employeur.id %}" >Détails employeur</a> </td> 
+          <td><a class="button is-dark" href="{% url 'famille:liste_contact_urgence' employeur.id %}" >Liste contacts urgence</a> </td> 
         </tr>
         {% endfor %}
       </tbody>
   </table>
 </section>
-{% endblock %}

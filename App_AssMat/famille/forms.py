@@ -31,6 +31,5 @@ class NewContactUrgenceForm(forms.ModelForm):
                   'filiation', 
                   'tel_fix', 
                   'tel_mob', 
-                  'employeur'
                   ]
         
