@@ -1,0 +1,549 @@
+{% extends "dashboard/base_dashboard_02.html" %}
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+
+{% block content %}
+    
+
+<div class="columns is-mobile is-multiline is-centered">
+    
+    
+    <section class="section">
+        <h1 class="title is-3 is-spaced">CONTRAT DE TRAVAIL À DURÉE INDÉTERMINÉE</h1>
+        <h2 class="subtitle is-5">A conserver sans limitation de durée</h2>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">Entre l'employeur</code><br>
+              Champs infos employeur
+            </p>
+        </div>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">Et le salarié</code><br>
+              Champs infos salarié
+            </p>
+        </div>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">1.Période d'adaptation</code><br>
+              Une période d’adaptation est souhaitable, tant pour l’enfant et ses parents, que pour l’assistant maternel.<br>
+              Elle est incluse dans la période d’essai, et il convient d’en préciser les modalités.<br> Les parties contractantes prévoient les 
+              modalités suivantes pour la période d’adaptation :<br>
+            </p><br>
+            <p>.Planning:</p><br>
+            <p>.Rémunération:</p><br>
+        </div>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">2.Période d'essai</code><br>
+              (cf. art. 5 de la convention collective en annexe p.17).<br>
+              Les parties contractantes décident de la date et de la durée de la période d’essai :<br>
+            </p><br>
+            <p>du :.............................................................................................au :.............................................................................................</p><br>
+        </div>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">3. DURÉE ET HORAIRES D’ACCUEIL DE BASE</code><br>
+              (articles 6 de la convention collective et 773-10 et 773-11 du décret,<br> articles L.421-4 et D.421-12 du code de l’action 
+              sociale et des familles en annexe p.17-18).<br>
+              L’enfant sera accueilli selon le ou les plannings suivants :<br> Attention : les horaires d’accueil doivent être en conformité avec les caractéristiques de l’agrément délivré<br>
+            </p><br>
+
+            <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Jours</th>
+                    <th>Planning 1</th>
+                    <th>Planning 2</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <th>Lundi</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                  <tr>
+                    <th>Mardi</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                  <tr>
+                    <th>Mercredi</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                  <tr>
+                    <th>Jeudi</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                  <tr>
+                    <th>Vendredi</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                  <tr>
+                    <th>Samedi</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                  <tr>
+                    <th>Dimanche</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                  <tr>
+                    <th>Heures Totales Hebdomadaires</th>
+                    <td><textarea class="textarea is-small" ></textarea></td>
+                    <td><textarea class="textarea is-small" ></textarea></td> 
+                  </tr>
+                </tbody>
+            </table>
+            <p>OU:</p><br>
+            <p>Planning mensuel s’il y a lieu qui sera remis le ....................................................... de chaque mois</p><br>
+            <p>Contraintes de l’employeur : .....................................................................................................................................................................</p><br>
+            <p>Durée annuelle :</p><br>
+            <p> Nombre de semaines d’accueil (planning annuel) : ..................................................................................................................................</p><br>
+            <p> Préciser le délai de prévenance en cas de modification de planning : ................................................................................................</p><br>
+        </div>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">4. REPOS HEBDOMADAIRE</code><br>
+              (cf. art. 10 de la convention collective en annexe p.18).<br>
+              Le jour de repos hebdomadaire est fixé le : ...................................................................................................................................................<br>
+            </p><br>
+            <p>L’assistant maternel accepte exceptionnellement d’accueillir l’enfant le jour de repos hebdomadaire :</p><br>
+            <label class="checkbox">
+                <input type="checkbox">
+                oui
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                non
+            </label><br>
+            <br>
+
+            <p>Dans ce cas, la journée sera selon accord des parties :</p><br>
+            <label class="checkbox">
+                <input type="checkbox">
+                rémunérée au tarif normal majoré de 25%
+            </label><br>
+            <label class="checkbox">
+                <input type="checkbox">
+                récupérée par un repos équivalent majoré de 25%
+            </label>
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">5. RÉMUNÉRATION</code><br>
+              (cf. art. 7 de la convention collective en annexe p.18).<br>
+              <code class="html">5.1 Salaire horaire de base :</code>
+            </p>
+            <p>Salaire horaire net de base : ............................... €, Salaire horaire brut de base : ............................... €<br>
+                Pour calculer le salaire net ou brut, utiliser le simulateur disponible sur le site pajemploi.<br>
+                Salaire brut : montant du salaire avant déduction des cotisations salariales<br>
+                Salaire net : montant du salaire après déduction des cotisations salariales<br>
+                Taux de majoration au-delà de la 45e heure : .................... % du salaire de base<br>
+                Taux de majoration pour l’accueil d’un enfant en difficulté : .................... % du salaire de base</p><br>
+            <p class="bd-notification is-primary">
+                <code class="html">5.2. Salaire mensuel de base :</code><br>
+            </p>  
+            <label class="checkbox">
+                <input type="checkbox">
+                ACCUEIL RÉGULIER
+            </label><br>  
+            <p>SI L’ACCUEIL DOIT S’EFFECTUER SUR UNE ANNÉE COMPLÈTE :</p><br>
+            <p>Votre mensualisation à compter du : ............................... </p>
+            <p>52 semaines, y compris les congés payés du salarié :</p><br>
+            <p>Salaire horaire brut de base ................ X nbre d’heures d’accueil par semaine ................ X 52 semaines</p>    
+            <p>12</p>
+            <p>Salaire mensuel brut : ............................... € Salaire mensuel net : ............................... €</p>    
+            <div class="cmath"> `f(x) = (x+2)/(2x+1)`          `x in RR,\ x !=-1/2`</div>   <br>
+
+            <p class="bd-notification is-primary">
+                <code class="html">Éléments nécessaires pour votre déclaration PAJEMPLOI ::</code>
+            </p><br>
+            <p>Nombre d’heures d’accueil / semaine X 52 semaines / 12</p><br>
+            <p>Correspondant à .................... heures mensualisées (2) </p>
+            <p>Nombre de jours d’accueil / semaine X 52 semaines / 12</p><br>
+            <p>Correspondant à .................... jours mensualisés (2)</p>    
+            <p>SI L’ACCUEIL DOIT S’EFFECTUER SUR UNE ANNÉE COMPLÈTE :</p>
+            <p>Votre mensualisation à compter du : ...............................</p> 
+            <p>Salaire horaire brut de base ................ X nbre d’heures d’accueil par semaine ................ X nbre de semaines programmées ............</p>    
+            <p>12</p>   
+            <p>Salaire mensuel brut : ............................... € Salaire mensuel net : ............................... €</p> 
+
+            <p class="bd-notification is-primary">
+                <code class="html">Éléments nécessaires pour votre déclaration PAJEMPLOI ::</code>
+            </p><br>
+            <p>Nombre d’heures d’accueil / semaine X nombre de semaines programmées / 12</p><br>
+            <p>Correspondant à .................... heures mensualisées (2) </p>
+            <p>Nombre de jours d’accueil / semaine X nombre de semaines programmées / 12</p><br>
+            <p>Correspondant à .................... jours mensualisés (2)</p>
+            <p>
+                La rémunération des congés acquis pendant la période de référence s’ajoute à ce salaire mensuel brut de base.<br>
+                (1) Il est conseillé que l’employeur procède à une régularisation :<br>
+                • à l’issue des 12 mois de mensualisation,<br>
+                • ou en cas d’avenant portant sur une modification de la mensualisation.<br>
+                (2) Pour effectuer le calcul, se référer au service Pajemploi.<br>
+            </p> 
+            <br>
+            <label class="checkbox">
+                <input type="checkbox">
+                ACCUEIL OCCASIONNEL
+            </label><br> 
+            <p>
+                Uniquement accueils de courte durée, sans caractère régulier.<br>
+                Salaire horaire brut de base X nbre d’heures d’accueil dans le mois<br>
+                La rémunération des congés dus s’effectue selon la règle du 1/10e
+                 versée à la fin de chaque accueil.
+            </p><br>
+            <p class="bd-notification is-primary">
+                <code class="html">5.3. Date de paiement du salaire :</code>
+            </p><br>
+            <p>Mode de paiement choisi : </p><br>
+            <p>Adhésion au service Pajemploi + </p>
+            <label class="checkbox">
+                <input type="checkbox">
+                oui
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                non
+            </label><br>
+        </div>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">6. JOURS FÉRIÉS</code><br>
+              (cf. art.11 de la convention collective en annexe p.19, loi Warsmann n°2012-387)<br>
+              Jours fériés travaillés : ..........................................................................................................................................................................................<br>
+            </p><br>
+        </div>
+
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">7. MODALITÉS DE DÉTERMINATION DES CONGÉS</code><br>
+              (cf. art.12 et 13 de la convention collective et 773-12 du décret en annexe- Art L.3141-9 du code du travail p.19-21).
+            </p><br>
+
+            <p>. Les droits sont définis dans le cadre de l’année dite de référence (du 1er juin de l’année précédente au 31 mai de l’année en cours).</p>
+            <p>. Le 31 mai, faire le point sur le nombre de jours de congés payés acquis, y compris les jours de fractionnement et <br>
+                      le salaire versé au cours de l’année de référence (y compris celui versé au titre des congés payés de l’année précédente),<br>
+                      hors indemnités (entretien, nourriture).</p>
+            <p>. S’informer mutuellement et annuellement sur les habitudes de prises de congés.</p>
+            <p>. Modèle de tableau prévisionnel de congés et absences (voir documents utiles p.4) à mettre à jour chaque année</p>
+            <p>. Préciser le délai de prévenance de fixation des dates de congés (date limite au 1er mars)</p>
+            <p>. Modalités de paiement des congés payés (en cas d’accueil sur une année incomplète) :</p>
+            <label class="checkbox">
+                <input type="checkbox">
+                en une seule fois au mois de juin 
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                lors de la prise principale des congés 
+            </label><br>
+            <label class="checkbox">
+                <input type="checkbox">
+                au fur et à mesure de la prise des congés 
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                soit par 12e chaque mois suivant la période de référence du 1er juin au 31 mai 
+            </label><br>
+            <p>. Autres congés (Cf article 13 de la convention collective, article L-3141-9 du code du travail p.21)</p>
+            <p>Ex : congés pour convenance personnelle, congés pour événements familiaux, congés supplémentaires…</p>
+            <p><textarea class="textarea is-small" ></textarea></p>
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">8. INDEMNITÉS D’ENTRETIEN ET DE FRAIS DE REPAS</code><br>
+              (cf. art. 8 de la convention collective et 773-5 du décret en annexe p.22).<br>
+            </p><br>
+            <p class="bd-notification is-primary">
+                <code class="html">Indemnités d’entretien :</code><br>
+            </p><br>
+            <p>• Montant journalier : .................................... €</p>
+            <p class="bd-notification is-primary">
+                <code class="html">Frais de repas fourni par l’assistant maternel :</code><br>
+            </p><br>
+            <p>• Petit déjeuner au prix de : .................................... €</p>
+            <p>• Déjeuner au prix de : .................................... €</p>
+            <p>• Goûter au prix de : .................................... €</p>
+            <p>• Repas du soir au prix de : .................................... €</p>
+            <p class="bd-notification is-primary">
+                <code class="html">Frais de repas fourni par l’employeur * :</code><br>
+            </p><br>
+            <p>* Je soussigné(e), Mme ou M. .......................................................................................................................... <br>
+                employeur de Mme ou M............................................................................ comme assistant maternel pour notre enfant<br> 
+                ..................................................................
+                né(e) le ........................................ atteste que, par jour d’accueil, <br>
+                la valeur des repas que nous fournissons, s’élève à ............... €
+            </p>    
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">9. INDEMNITÉS DIVERSES</code><br>
+              (cf. art. 9 de la convention collective en annexe p.23).<br>
+            </p><br>
+            <p>• Frais de déplacement : Montant en euros au kilomètre : .................................... €</p>
+            <p>• Autres : ...............................................................................................................................................<br>
+                .............................................................................................................................................<br>
+                ..............................................................................................................................................................
+            </p>   
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">10. CONDITIONS PARTICULIÈRES À DÉFINIR S’IL Y A LIEU</code><br>
+            </p><br>
+            
+            <p>...............................................................................................................................................<br>
+                .............................................................................................................................................<br>
+                ..............................................................................................................................................................
+            </p>   
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">11. AUTORISATION D’ACCUEIL DANS LE CADRE D’UNE MAISON D’ASSISTANTS MATERNELS :</code><br>
+            </p><br>
+            <p>Mme / M. : ................................................................................................................................................................................................................</p>
+            <p>employeur(s) de Mme / M. : ................................................................................................................................................................................</p>
+            <p>assistant maternel, l’autorise(nt) à déléguer l’accueil de l’enfant : ........................................................................................................</p>
+            <p>à Mme / M. : .............................................................................................................................................................................................................</p>
+            <p>Mme / M. : .................................................................................................................................................................................................................</p>
+            <p>Mme / M. : ................................................................................................................................. assistants maternels agréés de la maison</p>
+            <p>d’assistants maternels (adresse de la MAM) : ...............................................................................................................................................</p>
+            <p>dans les conditions suivantes à définir : ..........................................................................................................................................................<br>
+                ......................................................................................................................................................................................................................................<br>
+                ......................................................................................................................................................................................................................................<br>
+                ......................................................................................................................................................................................................................................</p>   
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">12. RUPTURE DE CONTRAT</code><br>
+              (cf art.18 de la convention collective en annexe-loi n° 2008-596 du 25 juin 2008 portant modernisation du marché du travail p.24).
+            </p><br>
+            <p class="bd-notification is-primary">
+                <code class="html">Institutions compétentes en matière de retraite et prévoyance</code><br>
+            </p><br> 
+            <p class="bd-notification is-primary">
+                <code class="html">RETRAITE</code><br>
+            </p><br> 
+            <p>Métropole :<br>
+                IRCEM-Retraite<br>
+                261 avenue des Nations Unies<br>
+                BP 593 - 59060 Roubaix Cedex<br>
+                Tél. 0 980 980 990<br>
+            </p><br>
+            <p>Départements d’Outre-Mer :<br>
+                CGSS GUADELOUPE<br>
+                Quartier de l’Hôtel de Ville<br>
+                BP 486<br>
+                97159 Pointe-à-Pitre<br>
+                Tél. 05 90 90 50 00<br>
+                <br>
+                CGSS LA MARTINIQUE<br>
+                Place d’Armes<br>
+                97210 Le Lamentin Cedex 2<br>
+                Tél. 05 96 66 50 79<br>
+                <br>
+                CGSS GUYANE<br>
+                Espace Turenne-Radamontbe<br>
+                Route de Raban<br>
+                BP 7015<br>
+                97307 Cayenne Cedex<br>
+                Tél. 05 94 39 60 00<br>
+                <br>
+                CGSS RÉUNION<br>
+                4 boulevard Doret<br>
+                97704 Saint-Denis Cedex<br>
+                Tél. 02 62 40 33 40 <br>
+            </p><br>
+            <p class="bd-notification is-primary">
+                <code class="html">PRÉVOYANCE</code><br>
+            </p><br> 
+            <p>RCEM-Prévoyance<br>
+                261 avenue des Nations Unies<br>
+                BP 593 - 59060 Roubaix Cedex<br>
+                Tél. 0 980 980 990
+            </p><br>
+                    <br><br><br>
+            <p>Fait à : .............................................................................................. le : ...................................................................................................................</p><br>
+            <p>Le parent employeur                                                L’assistant maternel</p>
+            <p>(Signature précédée de la mention “Lu et approuvé”) (Signature précédée de la mention “Lu et approuvé”)</p>
+        </div>
+
+        <br><br><br><br><br><br>
+
+        <h1 class="title is-3 is-spaced">CONTRAT D’ACCUEIL</h1>
+        <h3 class="subtitle is-6">NOM ET PRÉNOM DE L’ENFANT : .............................................................................................................................................................</h3>
+        
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">1. ENGAGEMENTS RÉCIPROQUES</code><br>
+              L’assistant maternel s’engage à :
+            </p><br>
+            <p>• ne jamais laisser l’enfant seul, même pour un court instant,<br>
+               • mettre tout en oeuvre pour développer une qualité d’accueil garantissant la santé, la sécurité et l’épanouissement<br>
+                 physique, intellectuel et affectif de l’enfant : jeux d’éveil, rythmes, repos, sorties, alimentation, etc.<br>
+               • informer les parents du contenu des repas, du comportement de l’enfant, des progrès réalisés et, le cas échéant des<br>
+                 difficultés rencontrées,<br>
+               • ne pas fumer, de même que son entourage, à proximité immédiate de l’enfant,<br>
+               • avertir les parents de la présence d’animaux à son domicile,<br>
+               • respecter l’obligation de discrétion à laquelle il est astreint,<br>
+               • faire visiter les pièces auxquelles l’enfant aura accès,<br>
+               • autres (à préciser) :<br>
+                ......................................................................................................................................................................................................................................
+            </p><br>
+            <p class="bd-notification is-primary">
+                <strong>L’agrément est délivré nominativement à l’assistant maternel, en conséquence lui seul est responsable de l’enfant :<br>
+                trajets scolaires, soins, alimentation, éveil, etc.<br>
+                L’enfant ne doit en aucun cas être confié à un autre membre de la famille de l’assistant maternel, ni à un autre adulte <br>
+                (sauf situation d’urgence avec l’autorisation préalable des parents).<br>
+                Les parents s’engagent à :</strong><br>
+            </p><br>
+            <p>
+                • respecter l’intimité et la vie privée de l’assistant maternel et de sa famille,<br>
+                • prévenir l’assistant maternel le plus tôt possible de tout changement d’horaire,<br>
+                • informer au plus tôt l’assistant maternel de tout retard éventuel pour récupérer l’enfant,<br>
+                • assurer le suivi médical, vaccinal et scolaire de leur enfant.<br>
+            </p><br>
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">2. FORMATION</code><br>
+              Formation initiale
+            </p><br>
+            <p>
+                Le Département est chargé de son organisation.<br>
+                La formation des assistants maternels est une obligation avant le renouvellement de l’agrément, la rémunération de ces<br>
+                journées est due, dans tous les cas, par l’employeur, s’il était prévu que l’enfant soit gardé ce jour-là (le salaire de base <br>
+                sera réglé sans indemnité d’entretien, ni de nourriture).<br>
+                Les assistants maternels agréés après le 1er janvier 2007 doivent effectuer 120 heures de formation + 7 heures d’initiation<br>
+                aux gestes de premiers secours. Cette formation est organisée en deux parties :<br>
+                • 80 heures doivent être suivies avant le premier accueil + 7 heures “prévention secours civiques de niveau 1”.<br>
+                • 40 heures dans les trois ans suivant l’accueil du premier enfant.<br>
+                L’accueil du 1er enfant est conditionné à la réussite de l’évaluation de fin du premier cycle.<br>
+                Les frais de garde sont pris en charge de façon forfaitaire par le Département, si les parents utilisent un autre mode d’accueil :<br>
+                assistant maternel, crèche, centre de loisirs sans hébergement, accueil collectif périscolaire.<br>
+                Formation continue<br>
+                L’assistant maternel dispose d’un droit au plan de formation du particulier employeur : 58 heures de formation par an, <br>
+                acquises dès la première heure de travail, non cumulables.<br>
+                Le droit individuel à la formation (DIF) a disparu depuis le 1er janvier 2015 mais reste mobilisable dans le cadre du<br>
+                Compte personnel de formation (CPF) jusqu’au 31 décembre 2021.<br>
+                Pour plus de renseignements : n° vert : 0 800 820 920 - site IPERIA<br>
+                Lister les formations continues suivies par l’assistant maternel :<br>
+                • ...................................................................................................................................................................................................................................<br>
+                • ...................................................................................................................................................................................................................................<br>
+            </p><br>
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">3. RENSEIGNEMENTS MÉDICAUX</code><br>
+            </p><br>
+            <p>
+                NOM ET PRÉNOM DE L’ENFANT : ...................................................................................................................................................................<br>
+                Date de naissance : ................................................................................................................................................................................................<br>
+                Mme/M. : ..................................................................................................................................................................................................................<br>
+                Autorise Mme/M. : .................................................................................................................................................................................................<br>
+                À administrer le traitement médical et le régime prescrits sous réserve de présentation de l’ordonnance ou de sa photocopie.<br>
+                À titre préventif, le médicament prescrit contre la fièvre par le médecin sera fourni par les parents, accompagné de <br>
+                l’ordonnance actualisée : les doses de médicament contre la fièvre étant fonction du poids de l’enfant.<br>
+                Allergies connues : .................................................................................................................................................................................................<br>
+                Aliments interdits : ................................................................................................................................................................................................<br>
+                Médicaments interdits : ........................................................................................................................................................................................<br>
+                Autres éléments relatifs à la santé de l’enfant que les parents jugent utile de communiquer à l’assistant maternel :<br>
+                ......................................................................................................................................................................................................................................<br>
+                Si la santé de votre enfant nécessite des soins particuliers, demander auprès du service Protection maternelle et infantile ou<br>
+                de votre relais assistants maternels de secteur un modèle de Projet d’accueil personnalisé (PAP) à renseigner conjointement<br>
+            </p>
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">Modalités du contrôle des vaccinations obligatoires pour l’entrée en collectivité d’enfants nés à compter<br> 
+                du 1er janvier 2018, en application du décret n° 2018-42 du 25 janvier 2018 et du décret n° 2019-137 du 
+                26 février 2019 :</code><br>
+                (Cf en annexe p. 25 vaccinations et notice explicative).<br>
+                • La notion de “collectivité d’enfants” précisée par le code de la santé publique <br>recouvre notamment les crèches, les
+                 halte-garderies, l’école, mais aussi les accueils réalisés par les assistants maternels agréés.<br>
+            </p><br>
+            <p class="bd-notification is-primary">
+                <code class="html">Documents à remettre par l’employeur à l’assistant maternel :</code><br>
+            </p>
+            <p>
+                • Copie des pages de vaccinations du carnet de santé ou certificat médical remis le 1er jour du contrat<br>
+                et une fois par an, pendant toute la durée de l’accueil.<br>
+                soit le : .....................................................................................................................................................................................<br>
+                soit le : .....................................................................................................................................................................................<br>
+                soit le : .....................................................................................................................................................................................<br>
+                soit le : .....................................................................................................................................................................................<br>
+                soit le : .....................................................................................................................................................................................<br>
+                soit le : .....................................................................................................................................................................................<br>
+                soit le : .....................................................................................................................................................................................<br>
+            </p>
+        </div>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+              <code class="html">En cas de maladie :</code><br>
+              (cf art.14 de la convention collective en annexe p.23).<br>
+            </p><br>
+            <p>
+                L’assistant maternel avertira les parents le plus rapidement possible ; puis, à leur demande, appellera le médecin choisi<br>
+                par ces derniers.<br>
+                Les deux parties conviennent ensemble des modalités d’accueil en cas de maladie de l’enfant (sauf situation d’éviction<br>
+                prononcée par certificat médical). Un refus d’accueil par l’assistant maternel (hors éviction) entraînera la déduction du <br>
+                salaire journalier.<br>
+                Lorsqu’un enfant amené le matin présente des symptômes inhabituels, l’assistant maternel dispose d’un pouvoir<br>
+                d’appréciation pour le rendre à la personne qui l’accompagne, ou le garder.<br>
+                Dans le cas où l’enfant est accueilli, l’assistant maternel applique les prescriptions du médecin traitant sur présentation<br>
+                obligatoire de l’ordonnance médicale. Seuls sont administrés les médicaments ayant une date de péremption à jour et <br>
+                accompagnés de l’ordonnance en cours de validité. Les médicaments homéopathiques devront répondre aux mêmes <br>
+                règles que les médicaments.<br>
+                Pour limiter au strict minimum les médicaments devant être pris chez l’assistant maternel, les parents doivent assumer<br>
+                eux-mêmes la prise de médicaments par leur enfant, le matin et/ou le soir à la maison.<br>
+                Les traitements en vente libre : sérum physiologique, crème protectrice préventive pour les fesses, crème solaire, douleur<br>
+                dentaire, crème pour les coups, peuvent être remis à l’assistant maternel, sous la responsabilité des parents, sans ordonnance.<br>
+                Docteur : ...................................................................................................................................................................................................................<br>
+                Adresse : ....................................................................................................................................................................................................................<br>
+                ..............................................................................................................................................................................................................................<br>
+                Tél. : .......................................................................................................................................................................................................................<br>
+                En cas d’absence du médecin traitant, le médecin pourra être :<br>
+                Docteur : ...................................................................................................................................................................................................................<br>
+                Adresse : ....................................................................................................................................................................................................................<br>
+                ...............................................................................................................................................................................................................................<br>
+                Tél. : ........................................................................................................................................................................................................................<br>
+                Personnes à contacter en cas d’urgence et en l’absence des parents :<br>
+                ...............................................................................................................................................................................................................................<br>
+                ...............................................................................................................................................................................................................................<br>
+                ...............................................................................................................................................................................................................................<br>
+                D’un commun accord, l’assistant maternel pourra faire l’avance des frais médicaux et pharmaceutiques :<br>
+            </p>
+            <label class="checkbox">
+                <input type="checkbox">
+                oui
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">
+                non
+            </label><br>
+            <p>Si oui, les frais seront intégralement remboursés le soir-même par les parents</p><br>
+            <p class="bd-notification is-primary">
+                <code class="html">En cas d’urgence :</code><br>
+                L’assistant maternel fera appel aux services médicaux d’urgence : le 15, service d’urgence départemental.<br>
+              </p><br>
+        </div>
+    </section> 
+</div>
+
+
+{% endblock %}

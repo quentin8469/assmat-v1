@@ -16,3 +16,4 @@ class ContratCreate(CreateView):
     form_class = NewContratForm
     template_name = 'contrat/contrat_create.html'
     success_url = '/dashboard/'
+

@@ -14,3 +14,8 @@ def index(request):
     return render(request, "dashboard/base_dashboard.html", context)
 
 
+def Contrat_Vierge(request):
+    """"""
+    return render(request, "dashboard/contrat_vierge.html")
+
+
