@@ -1,0 +1,29 @@
+{% load static %}
+
+
+<section class="section is-medium">
+  <h1 class="title">Recap Conges payé</h1>
+        <h2 class="subtitle">
+          Recapitule tout <strong>les sales gosses que tu garde.</strong>
+        </h2>
+
+        <table class="table is-bordered">
+      
+            <thead>
+                <tr>
+                    <th>maintient_salaire</th>
+                    <th>dix_pourcent</th>
+                    <th>Modifier congés</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for conge in conges %}
+              <tr>
+                <th>{{ conge.maintient_salaire }}</th>
+                <td>{{ conge.dix_pourcent }}</td>
+                <td><a class="button is-dark" href="" >Modifier congés</a> </td> 
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+</section>

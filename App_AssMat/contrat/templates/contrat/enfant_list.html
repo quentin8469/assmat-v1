@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<section class="section is-medium">
+  <h1 class="title">Recap Enfants</h1>
+        <h2 class="subtitle">
+          recapitule tout <strong>les sales gosses que tu garde.</strong>
+        </h2>
+
+        <table class="table is-bordered">
+      
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Photo</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Date_anniv</th>
+                    <th>Age</th>
+                    <th>Commentaire</th>
+                    <th>Contrat</th>
+                    <th>Modifier Enfant</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for enfant in enfants %}
+              <tr>
+                <th>{{ enfant.id }}</th>
+                <td><a href="" > <img src="{{ enfant.photo.url }}" width="112" height="28"></a></td>
+                <td>{{ enfant.nom }}</td>
+                <td>{{ enfant.prenom }}</td>
+                <td>{{ enfant.date_anniv }}</td>
+                <td>{{ enfant.age }} an(s)</td>
+                <td>{{ enfant.commentaire  }}</td>
+                <td>{{ enfant.contrat}}</td>
+                <td><a class="button is-dark" href="" >Modifier enfant</a> </td> 
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+</section>

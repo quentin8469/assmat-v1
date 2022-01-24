@@ -1,0 +1,37 @@
+{% load static %}
+
+
+<section class="section is-medium">
+  <h1 class="title">Recap Remunerations</h1>
+        <h2 class="subtitle">
+          Recapitule tout <strong>les rémunérations.</strong>
+        </h2>
+
+        <table class="table is-bordered">
+      
+            <thead>
+                <tr>
+                    <th>base_mensuel</th>
+                    <th>heure_mensuel</th>
+                    <th>taux_h_brut</th>
+                    <th>taux_h_net</th>
+                    <th>jour_mensuel</th>
+                    <th>contrat</th>
+                    <th>Modifier congés</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for remuneration in remunerations %}
+              <tr>
+                <th>{{ remuneration.base_mensuel }}</th>
+                <td>{{ remuneration.heure_mensuel }}</td>
+                <td>{{ remuneration.taux_h_brut }}</td>
+                <td>{{ remuneration.taux_h_net }}</td>
+                <td>{{ remuneration.jour_mensuel }}</td>
+                <td>{{ remuneration.contrat }}</td>
+                <td><a class="button is-dark" href="" >Modifier congés</a> </td> 
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+</section>
