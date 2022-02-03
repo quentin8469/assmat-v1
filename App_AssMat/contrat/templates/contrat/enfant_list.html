@@ -1,66 +1,30 @@
 {% load static %}
 
-
-<section class="section is-medium">
-  <h1 class="title">Recap Enfants</h1>
-        <h2 class="subtitle">
-          recapitule tout <strong>les sales gosses que tu garde.</strong>
-        </h2>
-
-        <!-- <table class="table is-bordered">
-      
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Photo</th>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Date_anniv</th>
-                    <th>Age</th>
-                    <th>Commentaire</th>
-                    <th>Contrat</th>
-                    <th>Modifier Enfant</th>
-                </tr>
-            </thead>
-            <tbody>
-              {% for enfant in enfants %}
-              <tr>
-                <td>{{ enfant.id }}</th>
-                <td><a href="" > <img src="{{ enfant.photo.url }}" width="112" height="28"></a></td>
-                <td>{{ enfant.nom }}</td>
-                <td>{{ enfant.prenom }}</td>
-                <td>{{ enfant.date_anniv }}</td>
-                <td>{{ enfant.age }} an(s)</td>
-                <td>{{ enfant.commentaire  }}</td>
-                <td>{{ enfant.contrat}}</td>
-                <td><a class="button is-dark" href="" >Modifier enfant</a> </td> 
-              </tr>
-              {% endfor %}
-            </tbody>
-        </table> -->
-        <div class="card-tabl">
-          <div class="content">
+  <div class="card events-card">
+    <header class="card-header">
+      <p class="card-header-title">
+        Récapitulatif informations enfants
+      </p>
+      <a href="#" class="card-header-icon" aria-label="more options"> </a>
+    </header>
+    <div class="card-table">
+        <div class="content">
               <table class="table is-fullwidth is-striped">
-                  <tbody>
-                    {% for enfant in enfants %}
-                      <tr>
-                          <td width="5%"><i class="fa fa-bell-o"></i></td>
-                          <td>{{ enfant.id }}</th>
-                          <td><img src="{{ enfant.photo.url }}" width="40" height="28"></a></td>
-                          <td>{{ enfant.nom }}</td>
-                          <td>{{ enfant.prenom }}</td>
-                          <td>{{ enfant.date_anniv }}</td>
-                          <td>{{ enfant.age }} an(s)</td>
-                          <td>{{ enfant.commentaire  }}</td>
-                          <td>{{ enfant.contrat}}</td>
-                          <td class="level-right"><a class="button is-small is-primary" href="#">Modifier enfant</a></td>
-                      </tr>
-                      {% endfor %}
-                  </tbody>
+                <tbody>
+                  {% for enfant in enfants %}
+                  <tr>
+                      <td><img src="{{ enfant.photo.url }}" width="40" height="28"></td>
+                      <td>{{ enfant.nom }}</td>
+                      <td>{{ enfant.prenom }}</td>
+                      <td>{{ enfant.date_anniv }}</td>
+                      <td>{{ enfant.age }} an(s)</td>
+                      <td>{{ enfant.contrat }}</td>
+                      <td><a class="button is-small is-primary" href="#">Modifier enfant</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
               </table>
-          </div>
-      </div>
-      <footer class="card-footer">
-          <a href="#" class="card-footer-item">View All</a>
-      </footer>
-</section>
+        </div>
+    </div>                            
+  </div>
+
