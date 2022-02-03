@@ -25,7 +25,6 @@
                     <td>{{ employeur.num_urssaf}}</td>
                     <td>{{ employeur.date_anniv }}</td>
                     <td>{{employeur.email}}</td>
-                    
                     <td><a class="button is-small is-primary" href="{% url 'famille:liste_contact_urgence' employeur.id %}" >Liste contacts urgence</a> </td> 
                   </tr>
                   {% endfor %}

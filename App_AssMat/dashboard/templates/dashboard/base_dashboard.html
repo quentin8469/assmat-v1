@@ -26,17 +26,17 @@
                         <li><a class="navbar-item" href="{% url 'dashboard:dashboard' %}">Tableau de bord</a></li>
                         <li><a class="navbar-item" href="{% url 'contrat:liste_contrats' %}">Contrats</a></li>
                         <li><a class="navbar-item" href="{% url 'dashboard:dashboard' %}">Profils</a></li>
+                        <li><a>se connecter</a></li>
+                        <li><a>se deconnecter</a></li>
                     </ul>
                     <p class="menu-label">
                         Recapitulatifs
                     </p>
                     <ul class="menu-list">
-                        <li><a>Exemple contrat vierge </a></li>
-                        <li><a>Liste des contrats</a></li>
-                        <li><a>Liste des enfants</a></li>
-                        <li><a>Liste des contacts d'urgence</a></li>
-                        <li><a>se connecter</a></li>
-                        <li><a>se deconnecter</a></li>
+                        <li><a href="{% url 'dashboard:contrat_vierge' %}">Exemple contrat vierge </a></li>
+                        <li><a href="{% url 'contrat:liste_contrats' %}">Liste des contrats</a></li>
+                        <li><a href="{% url 'contrat:liste_enfants' %}">Liste des enfants</a></li>
+                        
                     </ul>
                     <p class="menu-label">
                         Salaire
@@ -44,10 +44,27 @@
                     <ul class="menu-list">
                         <li><a>Fiche de paie</a></li>
                         <li><a>Congé</a></li>
-                        <li><a>recap semaine</a></li>
-                        <li><a>recap mois</a></li>
-                        <li><a>recap année</a></li>
+                        <li><a>Recap semaine</a></li>
+                        <li><a>Recap mois</a></li>
+                        <li><a>Recap année</a></li>
                     </ul>
+                    <p class="menu-label">
+                        <a href="{% url 'famille:liste_employeurs'%}">Recap famille</a>
+                    </p>
+                    <ul class="menu-list">
+                        {% for employeur in employeurs %}
+                        <li><a href="{% url 'famille:details_employeur' pk=employeur.id %}">{{ employeur.nom }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <p class="menu-label">
+                        Recap enfant
+                    </p>
+                    <ul class="menu-list">
+                        {% for enfant in enfants %}
+                        <li><a href="#">{{ enfant.nom }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    
                 </aside>
             </div>
             <div class="column">
@@ -67,13 +84,13 @@
                     <div class="tile is-ancestor has-text-centered">
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">????</p>
+                                <p class="title">????voir methode de class attribut de classe?</p>
                                 <p class="subtitle">nombre d'enfants</p>
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child box">
-                                <p class="title">????</p>
+                                <p class="title">???? voir methode de class attribut de classe?</p>
                                 <p class="subtitle">nombre de contrats</p>
                             </article>
                         </div>
@@ -98,7 +115,134 @@
                 
             </div>
         </div>
-    </div>    
+    </div> 
+    
+    
+  <!-- Debut Test 01 prez liste enfants gardés -->
+      <div class="container">
+        <div class="section">
+          <div class="columns">
+            <div class="column has-text-centered">
+              <h1 class="title" style="color: ghostwhite;">Bulma Card Layout Template</h1><br>
+            </div>
+          </div>
+          {% for enfant in enfants %}
+          <div id="app" class="row columns is-multiline">
+            <div v-for="card in cardData" key="card.id" class="column is-4">
+              <div class="card large">
+                <div class="card-image">
+                  <figure class="image is-16by9">
+                    <img src="{{ enfant.photo.url }}" alt="Image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="{{ enfant.photo.url }}"  alt="Image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                        
+                      <p class="title is-4 no-padding">{{ enfant.nom }}</p>
+                      <p>
+                        <span class="title is-6">
+                          <a > {{ enfant.prenom }} </a> </span> </p>
+                      <p class="subtitle is-6">{{ enfant.date_anniv  }}</p>
+                    </div>
+                  </div>
+                  <div class="content">
+                    {{ enfant.age }} an(s)  / {{ enfant.contrat }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+  <!-- Fin Test01 prez liste enfants gardés -->
+
+  <!-- Debut Test modal-cards -->
+  
+  
+    {% for enfant in enfants %}
+      <div class="column is-4">
+        <div class="card is-shady">
+
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="{{ enfant.photo.url }}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4>{{ enfant.nom }} {{ enfant.prenom }} </h4>
+              <p>{{ enfant.commentaire }}</p>
+              <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  <!--  ===============
+  HERE BE MODALS
+  ===============  -->
+  <!-- 3dFlipVertical card tiny -->
+  {% for enfant in enfants %}
+    <div id="modal-card" class="modal modal-fx-3dSlit">
+        <div class="modal-background"></div>
+        <div class="modal-content is-tiny">
+            <!-- content -->
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{{ enfant.photo.url }}" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="{{ enfant.photo.url }}" alt="portrait enafnt">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">{{ enfant.nom }}</p>
+                            <p class="subtitle is-6">prenom de l'enfant</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        test 01
+                        test 01
+                        test 01
+                        {{ enfant.nom }} {{ enfant.prenom }}
+                        {{ enfant.commentaire }}
+                        <a href="#">une data</a>
+                        <a href="#">une autre data</a>
+                        <br>
+                        <time datetime="2018-02-02">12:45 AM - 20 June 2018</time>
+                    </div>
+                </div>
+            </div>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    {% endfor %}
+  <!-- end tiny modal card -->
+  
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+      //The first argument are the elements to which the plugin shall be initialized
+      //The second argument has to be at least a empty object or a object with your desired options
+      OverlayScrollbars(document.querySelectorAll("body"), { });
+      });
+    </script> 
+    <!-- Fin Test modal-cards -->
 </body>
 
 </html>
