@@ -1,88 +1,130 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
-    <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
-    <title>Super_AssMat</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Super_AssMat</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <!-- Bulma Version 0.9.0-->
+        <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    </head>
     
-</head>
-<body>
-    <header>   
-        <nav class="navbar is-info is-full" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="">
-                  <img src="{{ user.photo.url }}" width="112" height="28">
-                </a>
-                
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-        
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="">
-                        un truc
-                    </a>
-            
-                    <a class="navbar-item" href="{% url 'dashboard:dashboard' %}">
-                        tableau de board
-                    </a>
-            
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">Autres options</a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">Contrats</a>
-                            <a class="navbar-item">Profile</a>
-                            <a class="navbar-item">Contact</a>
-                            <hr class="navbar-divider">
-                            <a class="navbar-item">Report an issue</a>
-                        </div>
-                    </div>
+    <body>
+    
+        <!-- START NAV -->
+        <nav class="navbar is-white"></nav>
+        <!-- END NAV -->
+        <div class="container">
+            <div class="columns">
+                <div class="column is-2 ">
+                    <aside class="menu is-hidden-mobile">
+                        <p class="menu-label">
+                            General
+                        </p>
+                        <ul class="menu-list">
+                            <li><a class="navbar-item" href="{% url 'dashboard:dashboard' %}">Tableau de bord</a></li>
+                            <li><a class="navbar-item" href="{% url 'contrat:liste_contrats' %}">Contrats</a></li>
+                            <li><a class="navbar-item" href="{% url 'dashboard:dashboard' %}">Profils</a></li>
+                            <li><a>se connecter</a></li>
+                            <li><a>se deconnecter</a></li>
+                        </ul>
+                        <p class="menu-label">
+                            Recapitulatifs
+                        </p>
+                        <ul class="menu-list">
+                            <li><a href="{% url 'dashboard:contrat_vierge' %}">Exemple contrat vierge </a></li>
+                            <li><a href="{% url 'contrat:liste_contrats' %}">Liste des contrats</a></li>
+                            <li><a href="{% url 'contrat:liste_enfants' %}">Liste des enfants</a></li>
+                            
+                        </ul>
+                        <p class="menu-label">
+                            Salaire
+                        </p>
+                        <ul class="menu-list">
+                            <li><a>Fiche de paie</a></li>
+                            <li><a>Congé</a></li>
+                            <li><a>Recap semaine</a></li>
+                            <li><a>Recap mois</a></li>
+                            <li><a>Recap année</a></li>
+                        </ul>
+                        <p class="menu-label">
+                            <a href="{% url 'famille:liste_employeurs'%}">Recap famille</a>
+                        </p>
+                        <ul class="menu-list">
+                            {% for employeur in employeurs %}
+                            <li><a href="{% url 'famille:details_employeur' pk=employeur.id %}">{{ employeur.nom }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="menu-label">
+                            Recap enfant
+                        </p>
+                        <ul class="menu-list">
+                            {% for enfant in enfants %}
+                            <li><a href="#">{{ enfant.nom }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        
+                    </aside>
                 </div>
-        
-                <div class="navbar-start">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary">
-                            <strong>Sign up</strong>
-                            </a>
-                            <a class="button is-light">
-                            Log in
-                            </a>
+                <div class="column">
+                    <section class="hero is-info welcome is-small">
+                        <div class="hero-body">
+                            <div class="container">
+                                <h1 class="title">
+                                    Bonjour {{user.username}}
+                                </h1>
+                                <h2 class="subtitle">
+                                    Bienvenue sur votre tableau de bord!
+                                </h2>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                    <section class="info-tiles">
+                        <div class="tile is-ancestor has-text-centered">
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">????voir methode de class attribut de classe?</p>
+                                    <p class="subtitle">nombre d'enfants</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">???? voir methode de class attribut de classe?</p>
+                                    <p class="subtitle">nombre de contrats</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">????</p>
+                                    <p class="subtitle">autres truc</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">?????</p>
+                                    <p class="subtitle">nombre de jours sans enfants morts</p>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+    
+                    {% block content %}
+    
+                    {% endblock %}
                 </div>
             </div>
-        </nav>
-    </header>
-
-
-
-    <div class="columns is-mobile is-multiline is-centered"> 
-        <div class="column is-narrow">
-          <p class="bd-notification is-primary">
-            <h5 class="title is-5">Bonjour {{user.username}} et bienvenue sur votre tableau de bord</h5>
-          </p>
         </div>
-    </div>
-    
-    {% block content %}
-    
-    {% endblock %}
-    <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <strong>AssMat</strong> by <a href="">moi</a>
-            <a href="">au</a>. The website  <a href="">top</a>.
-          </p>
-        </div>
-    </footer>
-</body>
+        <footer class="footer">
+            <div class="content has-text-centered">
+            <p>
+                <strong>AssMat</strong> by <a href="">moi</a>
+                <a href="">!!!!</a> The website  <a href="">au top</a>.
+            </p>
+            </div>
+        </footer>
+    </body>
 </html>
