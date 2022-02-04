@@ -19,7 +19,7 @@
                       <td>{{ enfant.date_anniv }}</td>
                       <td>{{ enfant.age }} an(s)</td>
                       <td>{{ enfant.contrat }}</td>
-                      <td><a class="button is-small is-primary" href="#">Modifier enfant</a></td>
+                      <td><a class="button is-small is-primary" href="{% url 'contrat:details_enfants' pk=enfant.id %}">Détails enfant</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>

@@ -11,8 +11,8 @@ class NewEmployeurForm(forms.ModelForm):
                   'prenom',
                   'email',
                   'photo',
-                  'adresse_postale'
-                  ,'code_postal',
+                  'adresse_postale',
+                  'code_postal',
                   'ville', 
                   'tel_fix', 
                   'tel_mob', 

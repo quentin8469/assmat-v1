@@ -1,15 +1,13 @@
 {% extends "dashboard/base_dashboard_02.html" %}
 {% load static %}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
 
-{% block content %}
-<section class="section is-medium">
-    
-    <a class="button is-dark" href="{% url 'famille:effacer_employeur' pk=employeur.id %}" >Effacer employeur</a> 
-    <a class="button is-dark" href="{% url 'famille:editter_employeur' pk=employeur.id %}" >Modifier employeur</a> 
-    <div class="field">
+
+{% block content %}   
+{% if employeur.photo %}
+    <img src="{{ employeur.photo.url }}">
+{% endif %}
+    <div class="field has-text-centered">
         <label class="label">Nom:</label>
         <div class="control">
             {{employeur.nom}}
@@ -21,10 +19,6 @@
         <label class="label">Email:</label>
         <div class="control">
             {{employeur.email}}
-        </div>
-        <label class="label">Photo:</label>
-        <div class="control">
-            {{employeur.photo}}
         </div>
         <label class="label">Adresse:</label>
         <div class="control">
@@ -58,8 +52,13 @@
         <div class="control">
             {{employeur.num_urssaf}}
         </div>
+        <br>
+        <div>
+            <a class="button is-dark" href="{% url 'famille:effacer_employeur' pk=employeur.id %}" >Effacer employeur</a> 
+            <a class="button is-dark" href="{% url 'famille:editter_employeur' pk=employeur.id %}" >Modifier employeur</a> 
+            <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
+        </div>
     </div>
-    <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
-</section>
+    
 
 {% endblock %}

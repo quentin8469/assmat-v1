@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
 
 {% block content %}
-<form action="" method="POST" class="box">
+<form enctype="multipart/form-data" action="" method="POST" class="box">
     {% csrf_token %}
         <div class="field">
             <label class="label">Nom:</label>
@@ -57,6 +57,7 @@
             <div class="control">
                 {{form.num_urssaf}}
             </div>
+            
         </div>
     <input class="button is-dark" type="submit" value="Validez votre employeur"> 
     <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>          

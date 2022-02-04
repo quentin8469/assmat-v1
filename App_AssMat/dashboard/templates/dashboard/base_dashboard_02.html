@@ -29,6 +29,7 @@
                             <li><a class="navbar-item" href="{% url 'dashboard:dashboard' %}">Tableau de bord</a></li>
                             <li><a class="navbar-item" href="{% url 'contrat:liste_contrats' %}">Contrats</a></li>
                             <li><a class="navbar-item" href="{% url 'dashboard:dashboard' %}">Profils</a></li>
+                            <li><a class="navbar-item" href="{% url 'famille:creation_employeur' %}">Ajouter employeur</a></li>
                             <li><a>se connecter</a></li>
                             <li><a>se deconnecter</a></li>
                         </ul>
@@ -63,9 +64,9 @@
                             Recap enfant
                         </p>
                         <ul class="menu-list">
-                            {% for enfant in enfants %}
+                            
                             <li><a href="#">{{ enfant.nom }}</a></li>
-                            {% endfor %}
+                            
                         </ul>
                         
                     </aside>
@@ -111,10 +112,12 @@
                             </div>
                         </div>
                     </section>
-    
+                    <br>
+                    <div class="card events-card">
                     {% block content %}
     
                     {% endblock %}
+                    </div>
                 </div>
             </div>
         </div>
