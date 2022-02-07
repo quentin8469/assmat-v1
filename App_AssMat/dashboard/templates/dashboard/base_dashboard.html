@@ -115,11 +115,13 @@
                 <br>
                 {% include "contrat/enfant_list.html" %}
                 <br>     
-                {% include "famille/employeur_list.html" %}    
+                  
                 
             </div>
         </div>
     </div> 
+
+    
     <footer class="footer">
         <div class="content has-text-centered">
           <p>
@@ -128,136 +130,8 @@
           </p>
         </div>
     </footer>
-    
-  <!-- Debut Test 01 prez liste enfants gardés -->
-    {% for enfant in enfants %}
-      <div class="container">
-        <div class="section">
-          <div class="columns">
-            <div class="column has-text-centered">
-              <h1 class="title" style="color: ghostwhite;">Bulma Card Layout Template</h1><br>
-            </div>
-          </div>
-          
-          <div id="app" class="row columns is-multiline">
-            <div v-for="card in cardData" key="card.id" class="column is-4">
-              <div class="card large">
-                <div class="card-image">
-                  <figure class="image is-16by9">
-                    <img src="{{ enfant.photo.url }}" alt="Image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="{{ enfant.photo.url }}"  alt="Image">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                        
-                      <p class="title is-4 no-padding">{{ enfant.nom }}</p>
-                      <p>
-                        <span class="title is-6">
-                          <a > {{ enfant.prenom }} </a> </span> </p>
-                      <p class="subtitle is-6">{{ enfant.date_anniv  }}</p>
-                    </div>
-                  </div>
-                  <div class="content">
-                    {{ enfant.age }} an(s)  / {{ enfant.contrat }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    {% endfor %}
-  <!-- Fin Test01 prez liste enfants gardés -->
-
-  <!-- Debut Test modal-cards -->
-  
-  
-    {% for enfant in enfants %}
-      <div class="column is-4">
-        <div class="card is-shady">
-
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="{{ enfant.photo.url }}" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              <h4>{{ enfant.nom }} {{ enfant.prenom }} </h4>
-              <p>{{ enfant.commentaire }}</p>
-              <span class="button is-link modal-button" data-target="modal-card">Modal Card</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  <!--  ===============
-  HERE BE MODALS
-  ===============  -->
-  <!-- 3dFlipVertical card tiny -->
-  
-    <div id="modal-card" class="modal modal-fx-3dSlit">
-        <div class="modal-background"></div>
-        <div class="modal-content is-tiny">
-            <!-- content -->
-            <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="{{ enfant.photo.url }}" alt="Placeholder image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="{{ enfant.photo.url }}" alt="portrait enafnt">
-                            </figure>
-                        </div>
-                        <div class="media-content">
-                            <p class="title is-4">{{ enfant.nom }}<span id="title"></span> </p></p>
-                            <p class="subtitle is-6">prenom de l'enfant</p>
-                        </div>
-                    </div>
-                    <div class="content">
-                        test 01
-                        test 01
-                        test 01
-                        {{ enfant.nom }} {{ enfant.prenom }}
-                        {{ enfant.commentaire }}
-                        {{ enfant.contrat.nom }}
-                        <a href="#">une data</a>
-                        <a href="#">une autre data</a>
-                        <br>
-                        <time datetime="2018-02-02">12:45 AM - 20 June 2018</time>
-                    </div>
-                </div>
-            </div>
-            <!-- end content -->
-        </div>
-        <button class="modal-close is-large" aria-label="close"></button>
-    </div>
-    {% endfor %}
-  <!-- end tiny modal card -->
-  
-    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-      //The first argument are the elements to which the plugin shall be initialized
-      //The second argument has to be at least a empty object or a object with your desired options
-      OverlayScrollbars(document.querySelectorAll("body"), { });
-      });
-    </script> 
-    
-    <!-- Fin Test modal-cards -->
-</body>
+  </body>
 
 </html>
+
+

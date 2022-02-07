@@ -1,30 +1,62 @@
 {% load static %}
 
-  <div class="card events-card">
-    <header class="card-header">
-      <p class="card-header-title">
-        Récapitulatif informations enfants
-      </p>
-      <a href="#" class="card-header-icon" aria-label="more options"> </a>
-    </header>
-    <div class="card-table">
-        <div class="content">
-              <table class="table is-fullwidth is-striped">
-                <tbody>
-                  {% for enfant in enfants %}
-                  <tr>
-                      <td><img src="{{ enfant.photo.url }}" width="40" height="28"></td>
-                      <td>{{ enfant.nom }}</td>
-                      <td>{{ enfant.prenom }}</td>
-                      <td>{{ enfant.date_anniv }}</td>
-                      <td>{{ enfant.age }} an(s)</td>
-                      <td>{{ enfant.contrat }}</td>
-                      <td><a class="button is-small is-primary" href="{% url 'contrat:details_enfants' pk=enfant.id %}">Détails enfant</a></td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
+<div class="card events-card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Récapitulatif informations enfants
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options"> </a>
+  </header>
+    
+  <div class="card-table">  
+    <div class="content">
+      <div id="app" class="row columns">
+        <div v-for="card in cardData" key="card.id" class="column is-4">
+          <div class="card large">
+            {% for enfant in enfants %}
+            <div class="card-image">
+              <figure class="image is-16by9">
+                {% if enfant.photo %}
+                  <img src="{{ enfant.photo.url }}" alt="Image">
+                {% endif %}
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    {% if enfant.photo %}
+                      <img src="{{ enfant.photo.url }}" alt="Image">
+                    {% endif %}
+                  </figure>
+                </div>
+                <div class="media-content">  
+                        <p class="title is-4 no-padding">{{ enfant.nom }}</p>
+                        <p>
+                          <span class="title is-6">
+                            <a > {{ enfant.prenom }} </a> </span> </p>
+                        <p class="subtitle is-6">{{ enfant.date_anniv  }}</p>
+                </div>
+              </div>
+                    <div class="content">
+                      {{ enfant.age }} an(s)  / {{ enfant.contrat.employeur.nom }} / {{ enfant.contrat.nom }} 
+                    </div>
+                    <div>
+                    <a class="button is-small is-primary" href="{% url 'contrat:details_enfants' pk=enfant.id %}">Détails enfant</a>
+                    </div>   
+            </div>
+            {% endfor %}
+          </div>
         </div>
-    </div>                            
-  </div>
+      </div> 
+    </div>
+  </div>                            
+</div>
 
+
+
+
+
+
+
+ 

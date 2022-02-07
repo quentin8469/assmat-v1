@@ -2,6 +2,7 @@
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
 
 from contrat.models import Contrat, Enfant, Remuneration, CongePaye
+from famille.models import Employeur, ContactUrgence
 from contrat.forms import NewContratForm, NewEnfantForm
 
 # Liste
@@ -49,6 +50,16 @@ class EnfantDetail(DetailView):
     context_object_name = "enfant"
     template_name = 'contrat/enfant_details.html'
     success_url = '/dashboard/'
+    
+    def get_context_data(self, **kwargs):
+        context = {}
+        enfant = Enfant.objects.get(id=self.kwargs["pk"])
+        contrat = Contrat.objects.get(id=enfant.contrat.id)
+        employeur = Employeur.objects.get(id=contrat.id)
+        contacts_urgences = ContactUrgence.objects.filter(employeur=employeur)
+        context['contacts_urgences'] = contacts_urgences
+        return super().get_context_data(**context) # get the default context data
+        
     
 # Update
 class EnfantUpdateView(UpdateView):

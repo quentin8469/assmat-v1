@@ -3,46 +3,63 @@
 
 
 
-{% block content %}   
-{% if enfant.photo %}
-    <img src="{{ enfant.photo.url }}">
-{% endif %}
-    <div class="field has-text-centered">
-        <label class="label">Nom:</label>
-            <div class="control">
-                {{enfant.nom}}
-            </div>
-            <label class="label">Prénom:</label>
-            <div class="control">
-                {{enfant.prenom}}
-            </div>
-            <label class="label">Photo:</label>
-            <div class="control">
-                {{enfant.photo}}
-            </div>
-            <label class="label">Date d'anniversaire:</label>
-            <div class="control">
-                {{enfant.date_anniv}}
-            </div>
-            <label class="label">Age:</label>
-            <div class="control">
-                {{enfant.age}}
-            </div>
-            <label class="label">Commentaire:</label>
-            <div class="control">
-                {{enfant.commentaire}}
-            </div>
-            <label class="label">Contrat:</label>
-            <div class="control">
-                {{enfant.contrat}}
-            </div>
-        <br>
-        <div>
-            <a class="button is-dark" href="{% url 'contrat:effacer_enfants' pk=enfant.id %}" >Effacer enfant</a> 
-            <a class="button is-dark" href="{% url 'contrat:editter_enfants' pk=enfant.id %}" >Modifier enfant</a> 
-            <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
-        </div>
+{% block content %}
+<div class="columns">
+    <div class="column is-one-fifth">
+        <figure class="image is-128x128">
+            {% if enfant.photo %}
+              <img src="{{ enfant.photo.url }}" alt="Image">
+            {% endif %}
+          </figure>  
     </div>
+    <div class="column">
+        <div class="field ">
+            <label class="label">Nom:</label>
+                <div class="control">
+                    {{enfant.nom}}
+                </div>
+            <label class="label">Prénom:</label>
+                <div class="control">
+                    {{enfant.prenom}}
+                </div>
+            <label class="label">Photo:</label>
+                <div class="control">
+                    {{enfant.photo}}
+                </div>
+            <label class="label">Date d'anniversaire:</label>
+                <div class="control">
+                    {{enfant.date_anniv}}
+                </div>
+            <label class="label">Age:</label>
+                <div class="control">
+                    {{enfant.age}}
+                </div>
+            <label class="label">Commentaire:</label>
+                <div class="control">
+                    {{enfant.commentaire}}
+                </div>
+            <label class="label">Contrat:</label>
+                <div class="control">
+                    {{enfant.contrat}}
+                </div>
+            <br>
+            
+                
+        </div>
+        
+    </div>
+    <div class="column">
+        <a class="button is-dark" href="{% url 'contrat:editter_enfants' pk=enfant.id %}" >Modifier enfant</a>
+        <br><br>
+        <a class="button is-dark" href="{% url 'contrat:effacer_enfants' pk=enfant.id %}" >Effacer enfant</a>
+        <br><br>  
+        <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
+    </div>
+     
+</div> 
+<div class="column">
+    {% include "famille/urgence_list.html" %}
+</div>     
+  
     
-
 {% endblock %}

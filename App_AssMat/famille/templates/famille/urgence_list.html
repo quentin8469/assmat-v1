@@ -1,31 +1,24 @@
-{% extends "dashboard/base_dashboard_02.html" %}
+
 {% load static %}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css">
+
 
 {% block content %}
-<section class="section is-medium">
-  <h1 class="title">Recap urgence</h1>
-        <h2 class="subtitle">
-          recapitule tout les <strong>Contacts d'urgence</strong> dont tu garde les sales gosses.
-        </h2>
-        <h2> liste famille, utile a voir comment l'utiliser( penser a rapatrier enfant ici une fois crée avec le crontrat)</h2>
-        <h2> sera afficher sur le dashboard</h2>
-        <a class="button is-dark" href="{% url 'famille:creation_contact_urgence' employeur_id %}" >Creation Contacts d'urgence</a>
-        <a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
+
+  <h1 class="title">Recap Contact d'urgences</h1>
+        
         
   <table class="table">
       
       <thead>
           <tr>
-              <th>ID</th>
+              <!-- <th>ID</th> -->
               <th>Contacts d'urgences</th>
               <th>Prénom</th>
               <th>Tel_fix</th>
               <th>Tel_mobile</th>
               <th>Filiation</th>
-              <th>Employeur</th>
+              <!-- <th>Employeur</th> -->
               <th>Modifier</th>
               <th>Supprimer</th>
           </tr>
@@ -33,18 +26,22 @@
       <tbody>
         {% for contact_urgence in contacts_urgences %}
         <tr>
-          <th>{{ contact_urgence.id }}</th>
+          <!-- <th>{{ contact_urgence.id }}</th> -->
           <td>{{ contact_urgence.nom }}</td>
           <td>{{ contact_urgence.prenom }}</td>
           <td>{{ contact_urgence.tel_fix }}</td>
           <td>{{ contact_urgence.tel_mob }}</td>
           <td>{{ contact_urgence.filiation }}</td>
-          <td>{{ contact_urgence.employeur.nom }}</td>
-          <td><a class="button is-dark" href="{% url 'famille:edit_urgence' contact_urgence.id %}" >Modifier contacts urgences</a> </td>
-          <td><a class="button is-dark" href="{% url 'famille:effacer_urgence' contact_urgence.id %}" >Supprimer contacts urgences</a> </td>
+          <!-- <td>{{ contact_urgence.employeur.nom }}</td> -->
+          <td><a class="button is-dark is-small" href="{% url 'famille:edit_urgence' contact_urgence.id %}" >Modifier contacts urgences</a> </td>
+          <td><a class="button is-dark is-small" href="{% url 'famille:effacer_urgence' contact_urgence.id %}" >Supprimer contacts urgences</a> </td>
+          
         </tr>
         {% endfor %}
       </tbody>
   </table>
-</section>
+
 {% endblock %}
+
+<a class="button is-dark" href="" >Creation Contacts d'urgence</a>
+<a class="button is-dark" href="{% url 'dashboard:dashboard' %}">Retour tableau de bord</a>
